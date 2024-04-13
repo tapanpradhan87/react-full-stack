@@ -1,6 +1,6 @@
-import { getAllBooks, createBookOne, createBookMany } from './controller/Book.controller'
+import { getAllBooks, createBookOne, createBookMany } from './controller/Book.controller.js'
 
-module.exports = [
+const routes = [
     {
         method: 'get',
         path: '/api/Books/getAllBooks',
@@ -20,3 +20,4 @@ module.exports = [
         action: createBookMany
     }
 ]
+export default routes
