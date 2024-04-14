@@ -2,6 +2,7 @@
 import bodyParser from 'body-parser';
 import express from 'express'
 import dotenv from 'dotenv'
+import path from 'path'
 dotenv.config();
 import routes from './router.js'
 // import { getAllBooks, createBookOne, createBookMany } from './controller/Book.controller.js'
@@ -33,6 +34,7 @@ const port = process.env.PORT
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static(path.join('public')))
 
 
 routes.forEach(route => {
