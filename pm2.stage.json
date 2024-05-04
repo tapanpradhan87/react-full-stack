@@ -1,0 +1,8 @@
+{
+    "apps": [
+        {
+            "name": "reac-auth",
+            "script": "server/index.js"
+        }
+    ]
+}
