@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Home() {
+function Book() {
     const [books, setBooks] = useState([]);
 
     const getAllBooks = async () => {
@@ -24,4 +24,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Book

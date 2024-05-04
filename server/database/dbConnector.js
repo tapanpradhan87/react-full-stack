@@ -51,5 +51,26 @@ export async function mongoGetAllBooks() {
     }
 }
 
+export async function mongoCreateUserOne(user) {
+    try {
+        const conn = await getConnection();
+        const createdBook = conn.collection('User')
+            .insertOne(user);
+        return createdBook;
+    } catch (e) {
+        console.error('Error occured in create user', e);
+    }
+}
+export async function mongoFindUserOne(username) {
+    try {
+        const conn = await getConnection();
+        const existingUser = conn.collection('User')
+            .findOne({ email: username });
+        return existingUser;
+    } catch (e) {
+        console.error('Error occured in find one user', e);
+    }
+}
+
 
 //  module.exports = { mongoCreateBookOne, mongoCreateBookMany, mongoGetAllBooks }
